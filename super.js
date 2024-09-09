@@ -205,3 +205,35 @@ const quotes = [
 {
        "quote":"If you can dream it, you can achieve it.","author":"Zig Ziglar"}
 ]
+
+
+
+
+const gemerate_Btn = document.getElementById('generatebutton');
+const quoteText_El = document.getElementById('quote-text');
+const authorName_El = document.getElementById('author-name');
+
+
+function displayquote() {
+
+
+    singlequote = quotes[Math.floor(Math.random() * quotes.length)]
+
+    quote = singlequote.quote;
+
+    author = singlequote.author;
+
+    quoteText_El.innerText = quote;
+
+    authorName_El.innerHTML = author;
+
+    console.log(singlequote);
+
+}
+
+displayquote();
+
+
+gemerate_Btn.addEventListener('click', () => {
+    displayquote();
+})
