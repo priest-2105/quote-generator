@@ -86,4 +86,37 @@ body{
     font-size: 1rem;
     font-weight: 600;
     color: #fefefe;
+    border-radius: 8px;
+    border: none;
+    transform: scale(1);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background-color: #e04668;
+    cursor: pointer;
+    background: linear-gradient(130deg,  #e04668 30%, #8a426e 60%, #863e57 100%);
+}
+.generate-button:hover{
+    transform: scale(1.03);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    background: linear-gradient(130deg,  #e04668 10%, #8a426e 20%, #863e57 500%);
+}
+
+@media only screen and (max-width: 768px) {
+    .card{
+        width: 95%;
+        min-height: 300px;
+    }
+    .quote-text{
+        font-size: 1.6rem;
+        padding: 20px 0px;
+    }
+    .img-icon{
+        top: -10px;
+        left: -20px;
+    }
+    .author-name{
+        margin-top: 20px;
+        font-size: 0.9rem;
+    }
 }
