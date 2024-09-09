@@ -228,6 +228,7 @@ function displayquote() {
     authorName_El.innerHTML = author;
 
     console.log(singlequote);
+ 
 
 }
 
@@ -236,4 +237,33 @@ displayquote();
 
 gemerate_Btn.addEventListener('click', () => {
     displayquote();
-})
+});
+
+ 
+
+document.getElementById('capture-btn').addEventListener('click', function() {
+    const quoteContainer = document.getElementById('card-capture-container');
+
+    html2canvas(quoteContainer).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = 'quote.png';  // Filename of the screenshot
+        link.click();  // Trigger download
+    });
+    // Use html2canvas to capture the screenshot of the specific div
+    // html2canvas(quoteContainer).then(canvas => {
+    //     // Create an image element
+    //     const img = document.createElement('img');
+    //     img.src = canvas.toDataURL(); // Convert the canvas to a base64 image
+
+    //     img.style.position = 'absolute';
+    //     img.style.right = '50px';
+    //     img.style.bottom = '50px';
+    //     img.style.height = 'auto';
+    //     img.style.width = '250px';
+
+    //     // Optionally, append the image to the body or download it
+    //     document.body.appendChild(img); // This will display the screenshot below
+    // });
+});
+
